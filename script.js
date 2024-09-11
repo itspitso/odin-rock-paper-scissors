@@ -40,29 +40,35 @@ function playRound(humanChoice, computerChoice) {
             return "Rock and Rock. It's a tie!"
         }
         else if (computerChoice == 'Paper') {
+            computerScore++;
             return "Paper beats Rock. You lose!"
         }
         else if (computerChoice == 'Scissors') {
+            humanScore++;
             return 'Rock beats Scissors. You win!'
         }
     }
     else if (humanChoice == 'paper') {
         if (computerChoice == 'Rock') {
+            humanScore++;
             return "Paper beats Rock. You win!"
         }
         else if (computerChoice == 'Paper') {
             return "Paper and Paper. It's a tie!"
         }
         else if (computerChoice == 'Scissors') {
+            computerScore++;
             return 'Scissors beats Paper. You lose!'
         }
 
     }
     else if (humanChoice == 'scissors') {
         if (computerChoice == 'Rock') {
+            computerScore++;
             return "Rock beats Scissors. You lose!"
         }
         else if (computerChoice == 'Paper') {
+            humanScore++;
             return "Scissors beats Paper. You win!"
         }
         else if (computerChoice == 'Scissors') {
