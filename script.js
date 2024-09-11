@@ -14,7 +14,7 @@ function getComputerChoice() {
         return 'Scissors'
     }
 }
-console.log(getComputerChoice());
+//console.log(getComputerChoice());
 
 function getHumanChoice() {
     // Ask user to choose between rock paper scissors
@@ -24,7 +24,54 @@ function getHumanChoice() {
     let choice = prompt('Rock, Paper, Scissors? Please type your answer');
     return choice;
 }
-console.log(getHumanChoice());
+//console.log(getHumanChoice());
 
 let computerScore = 0;
 let humanScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+    // rock beats scissors
+    // scissors beats paper
+    // paper beats rock 
+
+    if (humanChoice == 'rock') {
+        if (computerChoice == 'Rock') {
+            return "Rock and Rock. It's a tie!"
+        }
+        else if (computerChoice == 'Paper') {
+            return "Paper beats Rock. You lose!"
+        }
+        else if (computerChoice == 'Scissors') {
+            return 'Rock beats Scissors. You win!'
+        }
+    }
+    else if (humanChoice == 'paper') {
+        if (computerChoice == 'Rock') {
+            return "Paper beats Rock. You win!"
+        }
+        else if (computerChoice == 'Paper') {
+            return "Paper and Paper. It's a tie!"
+        }
+        else if (computerChoice == 'Scissors') {
+            return 'Scissors beats Paper. You lose!'
+        }
+
+    }
+    else if (humanChoice == 'scissors') {
+        if (computerChoice == 'Rock') {
+            return "Rock beats Scissors. You lose!"
+        }
+        else if (computerChoice == 'Paper') {
+            return "Scissors beats Paper. You win!"
+        }
+        else if (computerChoice == 'Scissors') {
+            return "Scissors and Scissors. It's a tie!"
+        }
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log(playRound(humanSelection, computerSelection));
