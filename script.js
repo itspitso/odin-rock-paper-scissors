@@ -15,14 +15,14 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
+/* function getHumanChoice() {
     // Ask user to choose between rock paper scissors
     // Make it easy to choose by asking them to type number
     // 0 for rock, 1 for paper, 2 for scissors
     // Show error message if user inputs anything else
     let choice = prompt('Rock, Paper, Scissors? Please type your answer');
     return choice;
-}
+} */
 
 
 function playGame() {

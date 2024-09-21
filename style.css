@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+#main-container {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+h1 {
+    text-align: center;
+    font-weight: 900;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.score-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
