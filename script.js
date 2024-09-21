@@ -15,27 +15,39 @@ function getComputerChoice() {
     }
 }
 
-/* function getHumanChoice() {
-    // Ask user to choose between rock paper scissors
-    // Make it easy to choose by asking them to type number
-    // 0 for rock, 1 for paper, 2 for scissors
-    // Show error message if user inputs anything else
-    let choice = prompt('Rock, Paper, Scissors? Please type your answer');
-    return choice;
-} */
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
 
+
+function getHumanChoice() {
+    if (rock.clicked == true) {
+        return "Rock";
+    } 
+    else if (paper.clicked == true) {
+         return "Paper";
+    } 
+    else if (scissors.clicked == true) {
+        return "Scissors";
+    }
+}
+rock.addEventListener("click", getHumanChoice);
+paper.addEventListener("click", getHumanChoice);
+scissors.addEventListener("click", getHumanChoice);
 
 function playGame() {
     let computerScore = 0;
     let humanScore = 0;
 
     function playRound(humanChoice, computerChoice) {
-        humanChoice = humanChoice.toLowerCase();
         // rock beats scissors
         // scissors beats paper
-        // paper beats rock 
+        // paper beats rock
+
+        console.log(`Your choice: ${humanChoice}`);
+        console.log(`The Computer's choice: ${computerChoice}`);
     
-        if (humanChoice == 'rock') {
+        if (humanChoice == 'Rock') {
             if (computerChoice == 'Rock') {
                 return "Rock and Rock. It's a tie!"
             }
@@ -48,7 +60,7 @@ function playGame() {
                 return 'Rock beats Scissors. You win!'
             }
         }
-        else if (humanChoice == 'paper') {
+        else if (humanChoice == 'Paper') {
             if (computerChoice == 'Rock') {
                 humanScore++;
                 return "Paper beats Rock. You win!"
@@ -62,7 +74,7 @@ function playGame() {
             }
     
         }
-        else if (humanChoice == 'scissors') {
+        else if (humanChoice == 'Scissors') {
             if (computerChoice == 'Rock') {
                 computerScore++;
                 return "Rock beats Scissors. You lose!"
@@ -77,8 +89,7 @@ function playGame() {
         }
     }
 
-    for (let i = 0; i < 5; i++) {
-        const humanSelection = getHumanChoice();
+    if (humanScore < 5 || computerScore < 5) {
         const computerSelection = getComputerChoice();
         console.log(playRound(humanSelection, computerSelection));
     }
@@ -95,5 +106,6 @@ function playGame() {
     }
     console.log(endGame(computerScore, humanScore));
 }
+const start = document.querySelector("#start");
+start.addEventListener("click", playGame);
 
-playGame();
