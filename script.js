@@ -128,12 +128,12 @@ function playRound(humanSelection, computerChoice) {
         scissors.onclick = chooseScissors;
     }
     else if (humanScore === 5) {
-        console.log(`Computer Score: ${computerScore}\n Human Score: ${humanScore}\nYou win!`);
+        console.log(`Computer Score: ${computerScore}\nHuman Score: ${humanScore}\nYou win!`);
         humanScore = 0;
         computerScore = 0;
         updateScore(humanScore, computerScore);
     } else if (computerScore === 5) {
-        console.log(`Computer Score: ${computerScore}\n Human Score: ${humanScore}\nThe computer wins!`);
+        console.log(`Computer Score: ${computerScore}\nHuman Score: ${humanScore}\nThe computer wins!`);
         humanScore = 0;
         computerScore = 0;
         updateScore(humanScore, computerScore);
