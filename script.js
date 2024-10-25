@@ -22,9 +22,20 @@ const scissors = document.querySelector("#scissors");
 let computerScore = 0;
 let humanScore = 0;
 
+const compScore = document.querySelector("#comp-score");
+const humScore= document.querySelector("#human-score");
+
+compScore.innerText = computerScore; 
+humScore.innerText = humanScore; 
+
 rock.onclick = chooseRock;
 paper.onclick = choosePaper;
 scissors.onclick = chooseScissors;
+
+function updateScore(humanScore, computerScore) {
+    compScore.innerText = computerScore; 
+    humScore.innerText = humanScore;   
+}
 
 function chooseRock() {
     let humanSelection = "Rock";
@@ -65,11 +76,13 @@ function playRound(humanSelection, computerChoice) {
         }
         else if (computerChoice == 'Paper') {
             computerScore++;
+            updateScore(humanScore, computerScore);
             console.log(computerScore);
             console.log("Paper beats Rock. One point for the computer!");
         }
         else if (computerChoice == 'Scissors') {
             humanScore++;
+            updateScore(humanScore, computerScore);
             console.log(humanScore);
             console.log('Rock beats Scissors. One point for the human!');
         }
@@ -77,6 +90,7 @@ function playRound(humanSelection, computerChoice) {
     else if (humanSelection == 'Paper') {
         if (computerChoice == 'Rock') {
             humanScore++;
+            updateScore(humanScore, computerScore);
             console.log(humanScore);
             console.log("Paper beats Rock. One point for the human!");
         }
@@ -85,6 +99,7 @@ function playRound(humanSelection, computerChoice) {
         }
         else if (computerChoice == 'Scissors') {
             computerScore++;
+            updateScore(humanScore, computerScore);
             console.log(computerScore);
             console.log('Scissors beats Paper. One point for the computer!');
         }
@@ -93,11 +108,13 @@ function playRound(humanSelection, computerChoice) {
     else if (humanSelection == 'Scissors') {
         if (computerChoice == 'Rock') {
             computerScore++;
+            updateScore(humanScore, computerScore);
             console.log(computerScore)
             console.log("Rock beats Scissors. One point for the computer!");
         }
         else if (computerChoice == 'Paper') {
             humanScore++;
+            updateScore(humanScore, computerScore);
             console.log(humanScore)
             console.log("Scissors beats Paper. One point for the human!");
         }
@@ -113,11 +130,13 @@ function playRound(humanSelection, computerChoice) {
     else if (humanScore === 5) {
         console.log(`Computer Score: ${computerScore}\n Human Score: ${humanScore}\nYou win!`);
         humanScore = 0;
-        computerScore = 0; 
+        computerScore = 0;
+        updateScore(humanScore, computerScore);
     } else if (computerScore === 5) {
         console.log(`Computer Score: ${computerScore}\n Human Score: ${humanScore}\nThe computer wins!`);
         humanScore = 0;
         computerScore = 0;
+        updateScore(humanScore, computerScore);
     }
 }
 
