@@ -8,8 +8,8 @@ body {
     text-align: center;
 }
 #main-container {
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: auto;
+    width: 50%;
 }
 h1 {
     text-align: center;
@@ -19,7 +19,45 @@ h1 {
 }
 
 .score-div {
+    padding: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+
+#rock, 
+#paper, 
+#scissors {
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: navy;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+#rock:hover,
+#paper:hover,
+#scissors:hover {
+    background-color: darkcyan;
+}
+ 
+#rock:active,
+#paper:active,
+#scissors:active {
+    background-color: darkcyan;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px); 
+}
+
+#text {
+    padding: 10px;
 }
